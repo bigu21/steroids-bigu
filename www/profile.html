@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Steroids App</title>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+  <!--<link rel="stylesheet" href="/vendor/ionic/css/ionic.css" />-->
+  <link rel="stylesheet" href="/stylesheets/steroids_app.css" />
+
+  <script src="/javascripts/onerror.js"></script>
+  <script src="/javascripts/console.log.js"></script>
+
+  <!-- cordova.js is served from localhost to ensure the correct version -->
+  <script src="http://localhost/cordova.js"></script>
+  <script src="/components/steroids-js/steroids.js"></script>
+
+  <script src="/javascripts/application.js"></script>
+
+  <!-- app code -->
+  <script type="text/javascript">
+      steroids.on('ready', function() {
+
+        document.addEventListener("visibilitychange", onVisibilityChange, false);
+
+        function onVisibilityChange() {
+          if(!document.hidden) {
+
+          }
+        }
+
+        steroids.statusBar.show();
+        steroids.view.navigationBar.show("Perfil");
+        steroids.tabBar.show();
+        steroids.view.setAllowedRotations = [0, 90, -90];
+
+      });
+  </script>
+</head>
+<body></body>
+</html>

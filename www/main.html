@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Steroids App</title>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+  <!-- shims for backwards compatibility -->
+  <script type="text/javascript" src="/components/lib/functionPrototypeBind.js"></script>
+  <script type="text/javascript" src="/components/lib/classList.js"></script>
+  <script type="text/javascript" src="/components/lib/requestAnimationFrame.js"></script>
+
+  <!-- module loader -->
+  <script type="text/javascript" src="/components/lib/require.js"></script>
+
+  <!-- famous -->
+  <link rel="stylesheet" type="text/css" href="/components/famous/dist/famous.css" />
+  <script type="text/javascript" src="/components/famous/dist/famous.min.js"></script>
+
+  <!--<link rel="stylesheet" href="/vendor/ionic/css/ionic.css" />-->
+  <link rel="stylesheet" href="/stylesheets/steroids_app.css" />
+
+  <script src="/javascripts/onerror.js"></script>
+  <script src="/javascripts/console.log.js"></script>
+
+  <!-- cordova.js is served from localhost to ensure the correct version -->
+  <script src="http://localhost/cordova.js"></script>
+  <script src="/components/steroids-js/steroids.js"></script>
+
+  <script src="/javascripts/application.js"></script>
+
+  <!-- app code -->
+  <link rel="stylesheet" type="text/css" href="/stylesheets/famous_app.css" />
+  <script type="text/javascript">
+      steroids.on('ready', function() {
+
+        document.addEventListener("visibilitychange", onVisibilityChange, false);
+
+        function onVisibilityChange() {
+          if(!document.hidden) {
+
+          }
+        }
+
+        steroids.statusBar.show();
+        steroids.view.navigationBar.show("Bigu21");
+        steroids.tabBar.show();
+        steroids.view.setAllowedRotations = [0, 90, -90];
+
+
+        if(localStorage['bigu/welcomeView'] !== 'true' 
+          && localStorage['bigu/loggedIn'] !== 'true') {
+          var welcomeView = new steroids.views.WebView("http://localhost/welcome.html");
+          steroids.layers.push({
+             view: welcomeView,
+             navigationBar: false,
+             tabBar: false,
+             statusBar: false
+          });
+        } else {
+          var profileView = new steroids.views.WebView({ location:
+              "http://localhost/profile.html",
+              id: "profileView" });
+          steroids.layers.replace(profileView);
+        }
+      });
+  </script>
+</head>
+<body></body>
+</html>
