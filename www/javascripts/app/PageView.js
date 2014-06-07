@@ -125,7 +125,7 @@ define(function(require, exports, module) {
 
 
             if(this.options.last) {
-               var mainView = new steroids.views.WebView("http://bigu.herokuapp.com/login");
+               var mainView = new steroids.views.WebView("http://localhost/main.html");
                steroids.layers.push({
                  overrideBackButton: true,
                  view: mainView,
@@ -149,7 +149,7 @@ define(function(require, exports, module) {
             }
 
             if(this.options.last) {
-               var mainView = new steroids.views.WebView("http://bigu.herokuapp.com/login");
+               var mainView = new steroids.views.WebView("http://localhost/main.html");
                steroids.layers.push({
                  overrideBackButton: true,
                  view: mainView,

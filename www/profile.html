@@ -37,6 +37,15 @@
         steroids.tabBar.show();
         steroids.view.setAllowedRotations = [0, 90, -90];
 
+        var mainView = new steroids.views.WebView("http://bigu.herokuapp.com/profile");
+         steroids.layers.push({
+           overrideBackButton: true,
+           view: mainView,
+           navigationBar: true,
+           statusBar: true,
+           tabBar: true,
+       });
+
       });
   </script>
 </head>

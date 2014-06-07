@@ -18,12 +18,12 @@ steroids.config.tabBar.tabs = [
    {
      title: "Partiu!"
      icon: "img/icons/car@2x.png"
-     location: "http://localhost/messages.html"
+     location: "http://bigu.herokuapp.com/messages"
    }
    {
      title: "Configurações"
      icon: "img/icons/ios7-gear@2x.png"
-     location: "http://www.google.com"
+     location: "http://bigu.herokuapp.com/login"
    }
 ]
 

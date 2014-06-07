@@ -51,8 +51,7 @@
         steroids.view.setAllowedRotations = [0, 90, -90];
 
 
-        if(localStorage['bigu/welcomeView'] !== 'true' 
-          && localStorage['bigu/loggedIn'] !== 'true') {
+        if(localStorage['bigu/welcomeView'] !== 'true') {
           var welcomeView = new steroids.views.WebView("http://localhost/welcome.html");
           steroids.layers.push({
              view: welcomeView,
@@ -69,5 +68,5 @@
       });
   </script>
 </head>
-<body></body>
+<body>Teste</body>
 </html>
